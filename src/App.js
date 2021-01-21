@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       articles: [],
       // author: [],
+      selectedNews: null,
     };
   }
   componentDidMount() {
@@ -39,7 +40,7 @@ class App extends Component {
             })}
           </Route>
           <Route path="/fullnews">
-            <FullNews />
+            <FullNews data={selectedNews} />
           </Route>
         </Router>
       </React.Fragment>
