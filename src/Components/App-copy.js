@@ -28,18 +28,14 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.articles);
     return (
       <React.Fragment>
         <Router>
           <Route path="/" exact>
-            <div>News Of The Day</div>
-            {this.state.articles.map((news, id) => {
-              return <HomePage news={news} id={id} />;
-            })}
+            <HomePage {...this.state} />
           </Route>
           <Route path="/fullnews">
-            <FullNews />
+            <FullNews {...this.state} />
           </Route>
         </Router>
       </React.Fragment>
